@@ -83,5 +83,14 @@
     #formulario>form>div{
         padding-top: 20px;
     }
+    #formulario>form>div .inputs{
+        color: #5f3a36;
+        width: 90%;
+        height: 40px;
+        outline: none;
+        font-size: 20px;
+        
+    
+    }
 
 }

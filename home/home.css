@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* importando as fonts roboto e inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* CSS Global */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+.flex{
+    display: flex;
+}
+main{
+    background-color: #a87a6f;
+    width: 77%;
+}
+
+/* Parte lateral do site com a navegação */
+
+
+/* logo */
+
+nav{
+    width: 23%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 1.5%;
+    box-shadow: 1px 1px 5px black;
+    gap: 5%;
+}
+nav .logo{
+    display: flex;
+    background-color: #a87a6f;
+    height: 10%;
+    gap: 15px;
+    padding: 15px;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 20%;
+}
+nav .logo>h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 48.41px;
+    color: #5f3a36;
+
+}
+nav .logo>p{
+    color: #5f3a36;
+}
+
+/* menu */
+
+nav .menu-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    margin-bottom: 20%;
+    list-style: none;
+}
+
+nav .menu-wrap>li{
+    display: flex;
+    box-shadow: 0px 1px 0px #a87a6f;
+    
+    gap: 10px;
+}
+nav .menu-wrap>li>a{
+    text-decoration: none;
+    color:  #5f3a36;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+
