@@ -88,6 +88,9 @@ nav .menu-wrap>.li-home{
 nav .menu-wrap>.li-home>a{
     color: #fff;
 }
+nav .menu-wrap>.li-home>a:hover{
+    color: #f9f9f9;
+}
 nav .menu-wrap>.li-home>img{
     background-color: #fff;
     border-radius: 20px;
@@ -98,6 +101,9 @@ nav .menu-wrap>li>a{
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     font-weight: 400;
+}
+nav .menu-wrap>li>a:hover{
+    color: #a87a6f;
 }
 
 /* Parte lateral direita do site  */
