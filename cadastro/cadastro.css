@@ -269,6 +269,8 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
 }
 
 /* Formulario */
+
+
 section.cadastro-wrapper{
    
     margin: 25px 2%;
@@ -291,15 +293,32 @@ section.cadastro-wrapper>form{
     padding: 20px;
     height: 95%;
 }
+section.cadastro-wrapper>form>h2{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.09px;
+}
+/* Cadastro  email,nome,endereço*/
 .cadastro-wrap{
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #a87a6f;
+    border-top: 1px solid #a87a6f;
   
 }
+
 .cadastro-nome{
+    margin-top: 10px;
     display: flex;
     gap: 10px;
     flex-direction: column;
+}
+.cadastro-nome>label{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
 }
 .cadastro-nome>input{
     width: 100%;
@@ -321,10 +340,38 @@ section.cadastro-wrapper>form{
     flex-direction: column;
     margin-right: 30px;
 }
+.cadastro-idade>input{
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    margin-bottom: 10px;
+}
+
 .cadastro-email{
     display: flex;
+    width: 100%;
     gap: 10px;
     flex-direction: column;
+}
+.cadastro-email>input{
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    margin-bottom: 10px;
 }
 
 .cadastro-endereco{
