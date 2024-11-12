@@ -75,7 +75,7 @@
             <h1>Cadastros</h1>
 
             <div class="botao-cadastrar">
-                <button class="btn-cadastrar">NOVO CADASTRO</button>
+                <button onclick="abrirCadastro()" class="btn-cadastrar">NOVO CADASTRO</button>
             </div>
 
             <ul clas="lista-wrap">
@@ -96,6 +96,11 @@
 
         <section class="cadastro-wrapper">
             <h1>Novo cadastro</h1>
+            <div class="radio">
+                <input class="checkbox" type="checkbox" name="ativo" id="ativo">
+                <label for="ativo">Ativo</label>
+            </div>
+
             <form class="formulario" action="">
                   <h2>1º Fatos e Dados</h2>  
                 <div class="cadastro-wrap">
@@ -132,25 +137,22 @@
 
 
                 </div><!-- cadastro-wrap -->
+                <h2>2º Interesses</h2>
                 <div class="interesses">
+                    <textarea name="interesses" id="interesses-area"></textarea>
 
                 </div><!-- interesses -->
-
+                <h2>3º Sentimentos</h2>
                 <div class="sentimentos">
-
+                    <textarea name="sentimentos" id="sentimentos-area"></textarea>
                 </div><!-- sentimentos -->
+                <h2>4º Valores</h2>
                 <div class="valores">
-
+                    <textarea name="valores" id="valores-area"></textarea>
                 </div> <!-- valores -->
-
-
-
-
-
-
-
-
-
+                <div class="botao-salvar">
+                    <button class="btn-salvar">GRAVAR</button>
+                </div> <!-- botao-salvar -->
 
             </form><!-- formulario -->
 
