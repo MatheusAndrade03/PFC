@@ -1,6 +1,23 @@
-
+// constantes
 const btnSair = document.querySelector(".btn-sair");
 const btnImprimir = document.querySelector(".btn-imprimir");
+const usuarioLogado = document.querySelector("#usuario-logado");
+
+
+
+// carrega ao iniciar a tela
+function onLoad(){
+    carregarUsuarioLogado();
+}
+
+
+
+
+// carregar o usuario logado
+function carregarUsuarioLogado(){
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+    usuarioLogado.innerHTML = usuario;
+}
 
 
 

@@ -38,8 +38,6 @@ const matheus = [{
 ];
 
 
-
-
 // botão entrar ação
 btnEntrar.addEventListener("click", (event) => {
        debugger;
@@ -51,14 +49,17 @@ btnEntrar.addEventListener("click", (event) => {
 function entrar(event) {
 
         if (validarCampos() == true) {
+                
                 if (validarLoginESenha() == true) {
-                        window.alert('Login bem-sucedido!');
-                }
-                else {
-                        window.alert('Email ou senha inválidos.');
+                        window.alert('Login bem-sucedido!')
+                        window.location.href = '../home/home.html';
+                }else{
+                        window.alert('Email ou senha incorretos.');
                         event.preventDefault(); // impede o envio do formulário
-
                 }
+
+
+
         } else {
                 window.alert('Erro ao entrar no sistema.');
                 event.preventDefault(); // impede o envio do formulário
@@ -93,11 +94,19 @@ function validarLoginESenha() {
         let emailValor = email.value;
         let senhaValor = senha.value;
 
+                if(localStorage.length>0){
         for (let i = 0; i < localStorage.length; i++) {
-                let usuario = JSON.parse(localStorage.getItem(localStorage.key(i))); // Obtém o objeto do usuário armazenado no localStorage
-                if (usuario[i].email == emailValor && usuario[i].senha == senhaValor) {
+                let usuarios = JSON.parse(localStorage.getItem(localStorage.key(i))); // Obtém o objeto do usuário armazenado no localStorage
+                let usuario=usuarios[0];
+                console.log(usuario);
+                if (usuario.email == emailValor && usuario.senha == senhaValor) {
+                        console.log('Login bem-sucedido!');
+                        localStorage.setItem('usuarioLogado', JSON.stringify(usuario.usuario));
                         return true;
                 }
         }
+        return false;
+}
+
         return false;
 }
