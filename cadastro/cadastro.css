@@ -9,6 +9,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body::-webkit-scrollbar { 
+    display: none;
+  }
+
 body {
     display: flex;
     flex-direction: row;
@@ -23,6 +28,7 @@ main{
     flex-direction: column;
     background-color: #a87a6f;
     width: 77%;
+    height: 100%;
     
 }
 
@@ -276,7 +282,7 @@ section.cadastro-wrapper{
    position: relative;
     margin: 25px 2%;
     background-color: #fff;
-    height:88%;
+    height:80%;
     box-shadow: 1px 1px 5px black;
     padding: 20px;
 }

@@ -92,5 +92,22 @@
         
     
     }
+    #botaoEntrar{
+    
+        padding-top: 10px;
+        font-size: 1em;
+        width: 50%;
+        height: 40px;
+        background-color: #a87a6f;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    
+    }
+    #botaoEntrar:hover{
+        background-color: #5f3a36;
+    
+    }
 
 }

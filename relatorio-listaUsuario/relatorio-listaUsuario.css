@@ -86,19 +86,19 @@ nav .menu-wrap>li{
 nav .menu-wrap>.li-borda{
     box-shadow: 0px 1px 0px #a87a6f;
 }
-nav .menu-wrap>.li-home{
+nav .menu-wrap>.li-relatorios{
     background-color: #a87a6f;
     box-shadow: 1px 1px 5px black;
 }
-nav .menu-wrap>.li-home>a{
+nav .menu-wrap>.li-relatorios>a{
     color: #fff;
 }
-nav .menu-wrap>.li-home>a:hover{
+nav .menu-wrap>.li-relatorios>a:hover{
     color: #f9f9f9;
 }
-nav .menu-wrap>.li-home>img{
+nav .menu-wrap>.li-relatorios>img{
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 nav .menu-wrap>li>a{
     text-decoration: none;
@@ -209,62 +209,14 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
     color: #a87a6f;
 }
 
-/* Parte central do site  */
-
-
-.dashboard-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 15px 2%;
-    border-radius: 2px;
-}
-.dashboard-wrapper .dashboard-wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    width: 32.3%;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 1px 1px 5px black;
-
-}
-.dashboard-wrapper .dashboard-wrap>p{
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18.75px;
-    position: absolute;
-    bottom: 8px;
-    right: 15px;
-
-}
-.dashboard-wrapper .dashboard-wrap>h1{
-    font-family: "Roboto", sans-serif;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 75px;
-    
-}
-.dashboard-wrapper .div-1>h1{
-    color: #0e1ead;
-}
-.dashboard-wrapper .div-2>h1{
-    color: #0bbc13;
-}
-.dashboard-wrapper .div-3>h1{
-    color: #f90808;
-}
 /* Parte inferior do site  */
 
 /* Lista */
 .lista-wrapper{
-    margin: 0 2%;
+    position: relative;
+    margin: 25px 2%;
     background-color: #fff;
-    height:55%;
+    height:90%;
     box-shadow: 1px 1px 5px black;
     padding: 20px;
 }
@@ -290,4 +242,28 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
     font-size: 16px;
     font-weight: 400;
     line-height: 16.41px;
+}
+/* botao imprimir */
+.botao-imprimir>.btn-imprimir{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 234px;
+    height: 39px;
+    background-color: #5763A0;
+    color: #fff;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 800;
+    box-shadow: 1px 1px 5px black;
+    cursor: pointer;
+    transition:all 0.3s ease-in-out;
+
+}
+.botao-imprimir>.btn-imprimir:hover{
+    background-color: #5f6db4;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #5763A0;
 }

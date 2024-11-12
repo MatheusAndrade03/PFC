@@ -100,18 +100,32 @@ box-shadow: 1px 1px 1px black;
 #formulario>form>div{
     padding-top: 10px;
 }
+/* login */
+
 #formulario>form>div.login{
+    position: relative;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+   
 }
+#formulario>form>div.login>span{
+    position: absolute;
+    left: 35px;
+}
+
 #formulario>form>div.senha{
-    
+    position: relative;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+   
+}
+#formulario>form>div.senha>span{
+    position: absolute;
+    left: 35px;
 }
 
 
@@ -121,8 +135,9 @@ box-shadow: 1px 1px 1px black;
     height: 40px;
     outline: none;
     border: 3px solid #a87a6f;
-    text-align: center;
+    padding-left: 45px;
     font-size: 16px;
+    border-radius: 8px;
     
 
 }
