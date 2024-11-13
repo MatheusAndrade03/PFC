@@ -1,11 +1,12 @@
 const usuarioLogado = document.querySelector("#usuario-logado");
-
+const pesquisar =document.querySelector("#pesquisarId");
 
 
 // carrega ao iniciar a tela
 function onLoad(){
     carregarUsuarioLogado();
     carregarLista();
+    carregarDashborde()
 }
 
 
@@ -34,14 +35,14 @@ btnSair.addEventListener("click", function(){
 function adicionarNaLista(colaborador) {
     const lista = document.querySelector("#listaCadastros");
     const item = document.createElement('li');
-    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p>`;
+    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p><button id="btn-editar"><img src="/imagens/edit.png" alt="edit"></button><button id="btn-excluir">X</button>`;
     lista.appendChild(item);
 
 }
 
 // carregar a lista de colaboradores
 function carregarLista() {
-        let usuario = usuarioLogado.innerHTML;
+    let usuario = usuarioLogado.innerHTML;
     let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
         
     cadastros[0].colaboradores.reverse().forEach(item=> adicionarNaLista(item));
@@ -49,5 +50,44 @@ function carregarLista() {
 
 
 
+
+}
+// pesquisar colaborador
+
+pesquisar.addEventListener("keyup", ()=>{
+
+    
+    let usuario = usuarioLogado.innerHTML;
+    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+    let valor = pesquisar.value.toLowerCase(); 
+    const lista = document.querySelector("#listaCadastros")
+    lista.innerHTML = "";
+    cadastros[0].colaboradores.forEach(item=>{
+        if(item.nome.toLowerCase().includes(valor) || item.email.toLowerCase().includes(valor)){
+            adicionarNaLista(item);
+        }
+    });
+
+    
+});
+
+
+// dashborde
+
+function carregarDashborde() {
+    let dashbordeTotal = document.querySelector("#dashboard-div1");
+    let dashbordeAtivo = document.querySelector( "#dashboard-div2");
+    let dashbordeInativo = document.querySelector("#dashboard-div3");
+    let usuario = usuarioLogado.innerHTML;
+
+    let cadastros= JSON.parse(localStorage.getItem(usuario))||[];
+
+   let totalCadastro=cadastros[0].colaboradores.length
+    let totalAtivo = cadastros[0].colaboradores.filter(item=> item.ativo).length;
+    let totalInativo = cadastros[0].colaboradores.filter(item=> !item.ativo).length;
+
+    dashbordeTotal.innerHTML = totalCadastro;
+    dashbordeAtivo.innerHTML = totalAtivo;
+    dashbordeInativo.innerHTML = totalInativo;
 
 }

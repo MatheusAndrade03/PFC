@@ -2,6 +2,7 @@
 const btnSair = document.querySelector(".btn-sair");
 const btnImprimir = document.querySelector(".btn-imprimir");
 const usuarioLogado = document.querySelector("#usuario-logado");
+const pesquisar = document.querySelector("#pesquisarId");
 
 
 
@@ -40,7 +41,7 @@ btnImprimir.addEventListener("click", function(){
 function adicionarNaLista(colaborador) {
     const lista = document.querySelector("#listaCadastros");
     const item = document.createElement('li');
-    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p>`;
+    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p><button id="btn-editar"><img src="/imagens/edit.png" alt="edit"></button><button id="btn-excluir">X</button>`;
     lista.appendChild(item);
 
 }
@@ -57,3 +58,22 @@ function carregarLista() {
 
 
 }
+
+// pesquisar colaborador
+
+pesquisar.addEventListener("keyup", ()=>{
+
+    
+    let usuario = usuarioLogado.innerHTML;
+    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+    let valor = pesquisar.value.toLowerCase(); 
+    const lista = document.querySelector("#listaCadastros")
+    lista.innerHTML = "";
+    cadastros[0].colaboradores.forEach(item=>{
+        if(item.nome.toLowerCase().includes(valor) || item.email.toLowerCase().includes(valor)){
+            adicionarNaLista(item);
+        }
+    });
+
+    
+});
