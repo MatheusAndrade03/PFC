@@ -8,6 +8,7 @@ const usuarioLogado = document.querySelector("#usuario-logado");
 // carrega ao iniciar a tela
 function onLoad(){
     carregarUsuarioLogado();
+    carregarLista()
 }
 
 
@@ -31,3 +32,28 @@ btnSair.addEventListener("click", function(){
 btnImprimir.addEventListener("click", function(){
     window.print();
 });
+
+
+
+// adicionar Colaborador na lista
+
+function adicionarNaLista(colaborador) {
+    const lista = document.querySelector("#listaCadastros");
+    const item = document.createElement('li');
+    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p>`;
+    lista.appendChild(item);
+
+}
+
+// carregar a lista de colaboradores
+function carregarLista() {
+        let usuario = usuarioLogado.innerHTML;
+    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+
+    cadastros[0].colaboradores.forEach(item=> adicionarNaLista(item));
+
+
+
+
+
+}

@@ -1,43 +1,123 @@
-//onstantes
+//constantes
 const usuarioLogado = document.querySelector("#usuario-logado");
 const btnSair = document.querySelector(".btn-sair");
 const btnSalvar = document.querySelector('.btn-salvar');
+// campos do formulário
+const radioAtivo = document.querySelector('#ativo');
+const formNome = document.querySelector('#nome');
+const formIdade = document.querySelector('#idade');
+const formEmail = document.querySelector('#email');
+const formEndereco = document.querySelector('#endereco');
+const formOutrasInfo = document.querySelector('#outras-informacoes');
+const formInteresses = document.querySelector('#interesses-area');
+const formSentimentos = document.querySelector('#sentimentos-area');
+const formValores = document.querySelector('#valores-area');
+//Campos da lista
 
 
-btnSalvar.addEventListener("click", ()=>{
 
-    
+
+btnSalvar.addEventListener("click", (event) => {
+    debugger;
+    cadastrarColaborador(event);
+
 })
 
 // carrega ao iniciar a tela
-function onLoad(){
+function onLoad() {
     carregarUsuarioLogado();
+    carregarLista()
 }
 
 // carregar o usuario logado
-function carregarUsuarioLogado(){
+function carregarUsuarioLogado() {
     const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
     usuarioLogado.innerHTML = usuario;
 }
 
 
 // sair do sistema
-btnSair.addEventListener("click", function(){
+btnSair.addEventListener("click", function () {
     window.location.href = "../login/login.html";
 });
 
 // Função para abrir a tela de cadastro
- function abrirCadastro(){
-      const  telaLista = document.querySelector(".lista-wrapper");
-      const  telaCadastro= document.querySelector(".cadastro-wrapper");
-      telaLista.style.display = "none";
-      telaCadastro.style.display = "block";
+function abrirCadastro() {
+    const telaLista = document.querySelector(".lista-wrapper");
+    const telaCadastro = document.querySelector(".cadastro-wrapper");
+    telaLista.style.display = "none";
+    telaCadastro.style.display = "block";
 
 }
 
+// ..............................................................................
 // função para cadastrar um novo colaborador
 
-function cadastrarColaborador() {
+function cadastrarColaborador(event) {
+    let nome = formNome.value;
+    let idade = formIdade.value;
+    let email = formEmail.value;
+    let endereco = formEndereco.value;
+    let outrasInfo = formOutrasInfo.value;
+    let interesses = formInteresses.value;
+    let sentimentos = formSentimentos.value;
+    let valores = formValores.value;
+    let ativo = radioAtivo.checked ? true : false;
+    let id = gerarId();
+    let usuarioLogad = usuarioLogado.innerHTML;
 
-    
+
+    // Verifica se ha campos obrigatórios vazios
+    if (nome == "" || endereco == "" || idade == "" || email == "") {
+        alert("Preencha todos os campos obrigatórios, Nome, Idade, Email e Endereço");
+        formNome.focus();
+        formNome.style.border = "1px solid red";
+        formIdade.style.border = "1px solid red";
+        formEmail.style.border = "1px solid red";
+        formEndereco.style.border = "1px solid red";
+        event.preventDefault();
+        return;
+    }
+
+    const colaborador = { nome, idade, email, endereco, outrasInfo, interesses, sentimentos, valores, ativo, id };
+
+
+    let usuarios = JSON.parse(localStorage.getItem(usuarioLogad)) || [];
+    usuarios[0].colaboradores.push(colaborador);
+    localStorage.setItem(usuarioLogad, JSON.stringify(usuarios));
+    alert("Colaborador cadastrado com sucesso!");
+
+    adicionarNaLista(colaborador);
+
+
+
+}
+
+// gera um id aleatório para o colaborador
+
+function gerarId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+// adicionar Colaborador na lista
+
+function adicionarNaLista(colaborador) {
+    const lista = document.querySelector("#listaCadastros");
+    const item = document.createElement('li');
+    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p>`;
+    lista.appendChild(item);
+
+}
+
+// carregar a lista de colaboradores
+function carregarLista() {
+        let usuario = usuarioLogado.innerHTML;
+    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+
+    cadastros[0].colaboradores.forEach(item=> adicionarNaLista(item));
+
+
+
+
+
 }
