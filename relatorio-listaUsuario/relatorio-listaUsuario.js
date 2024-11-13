@@ -41,10 +41,30 @@ btnImprimir.addEventListener("click", function(){
 function adicionarNaLista(colaborador) {
     const lista = document.querySelector("#listaCadastros");
     const item = document.createElement('li');
-    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p><button id="btn-editar"><img src="/imagens/edit.png" alt="edit"></button><button id="btn-excluir">X</button>`;
+    item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <p>${colaborador.ativo?"ativo":"inativo"}</p><button id="btn-editar"><img src="/imagens/edit.png" alt="edit"></button>`;
+    const btnExcluir= document.createElement("button");
+    btnExcluir.innerHTML = `X`;
+    btnExcluir.setAttribute("id", "btn-excluir");
+    btnExcluir.addEventListener("click", ()=>{
+        excluirColaborador(colaborador);
+        item.remove();
+    });
+
+    item.appendChild(btnExcluir);
     lista.appendChild(item);
 
 }
+// excluir colaborador
+function excluirColaborador(colaborador) {
+    let usuario = usuarioLogado.innerHTML;
+    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+    cadastros[0].colaboradores = cadastros[0].colaboradores.filter(item=> item.id !== colaborador.id);
+    localStorage.setItem(usuario, JSON.stringify(cadastros));
+    
+
+}
+
+
 
 // carregar a lista de colaboradores
 function carregarLista() {
