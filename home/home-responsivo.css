@@ -43,12 +43,41 @@
 }
 /* celular */
 @media screen and (max-width:830px) {
+    body{
+        flex-direction: row-reverse;
+    }
+   
     main{
         background-color: red;
+        width: 100%;
     }
+    nav{
+        display: block;
+        z-index: 3;
+        position: absolute;
+        width: 45%;
+        
+    }	
 
 
+
+    /* pesquisar */
+
+        section.pesquisar-wrapper{
+            padding: 10px;
+        }
+    section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
+        width: 400px;
+        
+    }
     
+    /* usuario  */
+    section.pesquisar-wrapper>.flex-usuario{
+        display: none;
+    
+    }   
+
+
 
   
 }
