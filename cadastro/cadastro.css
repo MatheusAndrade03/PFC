@@ -254,7 +254,7 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
 }
 #btn-editar{
     position: absolute;
-    right: 150px;
+    right: 60px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -274,8 +274,6 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
 
 }
 #btn-excluir{
-    position: absolute;
-    right: 100px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -289,13 +287,9 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
     padding: 5px;
     border: none;
     cursor: pointer;
-
 }
 
-.botao-cadastrar{
-    
 
-}
 .botao-cadastrar>.btn-cadastrar{
     position: absolute;
     top: 10px;

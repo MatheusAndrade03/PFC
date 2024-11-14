@@ -244,45 +244,6 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
     color: #fff;
 }
 
-#btn-editar{
-    position: absolute;
-    right: 160px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #056ac9;
-    border-radius: 5px;
-    padding: 5px;
-    border: none;
-    cursor: pointer;
-}
-#btn-editar>img{
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50px;
-
-}
-#btn-excluir{
-    position: absolute;
-    right: 125px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e60303;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    border: none;
-    cursor: pointer;
-
-}
 
 .lista-wrapper>ul>li>p{
     font-family: "Roboto", sans-serif;
