@@ -1,3 +1,54 @@
 @charset "UTF-8";
 
 
+/* Tablete */
+@media screen and (max-width: 1020px) {
+/* geral css */
+    main{
+    background-color: #a87a6f;
+    width: 70%;
+    }
+    nav{
+        width: 30%;
+    }
+    /* Parte Superior do site */
+    /* Usuario */
+
+    /* barra de pesquisa */
+   
+    
+    section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
+        width: 280px;
+    
+    }
+    
+    /* usuario  */
+    section.pesquisar-wrapper>.usuario-wrap{
+        transform:none;
+    
+    }
+   
+    section.pesquisar-wrapper>.usuario-wrap img{ 
+        width: 38px;
+        height: 38px;
+    }
+    /* botao sair */
+   
+    
+    section.pesquisar-wrapper>.botao-sair>.btn-sair{
+            width: 40px;
+    }
+    
+    
+}
+/* celular */
+@media screen and (max-width:830px) {
+    main{
+        background-color: red;
+    }
+
+
+    
+
+  
+}

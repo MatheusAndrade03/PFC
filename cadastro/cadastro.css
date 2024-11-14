@@ -155,42 +155,44 @@ section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
 }
 
 /* usuario  */
-section.pesquisar-wrapper>.usuario-wrap{
-    transform: translate(85%);
-
+section.pesquisar-wrapper>.flex-usuario{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-section.pesquisar-wrapper>.usuario-wrap>.flex{
+
+section.pesquisar-wrapper>.flex-usuario>.usuario-wrap>.flex{
     display: flex;
     gap: 10px;
     align-items: center;
     padding: 0px 10px;
 }
-section.pesquisar-wrapper>.usuario-wrap>.flex> p{
+section.pesquisar-wrapper>.flex-usuario>.usuario-wrap>.flex> p{
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 18.75px;
     color: #fff;
 }
-section.pesquisar-wrapper>.usuario-wrap img{
+section.pesquisar-wrapper>.flex-usuario>.usuario-wrap img{
     border-radius: 50%;
     width: 43px;
     height: 43px;
     margin: 10px;
 }
 /* botao sair */
-section.pesquisar-wrapper>.botao-sair{
+section.pesquisar-wrapper>.flex-usuario>.botao-sair{
     position: relative;
-    background-color: #f90808;
+   
 }
-section.pesquisar-wrapper>.botao-sair>span{
+section.pesquisar-wrapper>.flex-usuario>.botao-sair>span{
     position: absolute;
     top: 20%;
     left: 10px;
     color: #fff;
 }
 
-section.pesquisar-wrapper>.botao-sair>.btn-sair{
+section.pesquisar-wrapper>.flex-usuario>.botao-sair>.btn-sair{
         color: rgb(255, 255, 255);
         background-color: #5f3a36;
         padding-left: 20px;
@@ -204,7 +206,7 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair{
         box-shadow: -1px 0px 0px white;
 
 }
-section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
+section.pesquisar-wrapper>.flex-usuario>.botao-sair>.btn-sair:hover{
    
     cursor: pointer;
     color: #a87a6f;
