@@ -40,7 +40,7 @@ const matheus = [{
 
 // botão entrar ação
 btnEntrar.addEventListener("click", (event) => {
-       debugger;
+       
         entrar(event)
 
 })
