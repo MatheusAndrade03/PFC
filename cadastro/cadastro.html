@@ -77,13 +77,13 @@
             <div class="botao-cadastrar">
                 <button onclick="abrirCadastro()" class="btn-cadastrar">NOVO CADASTRO</button>
             </div>
-
+            <div class="flex titulo-lista">
+                <div class="borda">
+                    <p>NOME</p><p>E-MAIL</p><p>STATUS</p>
+                </div>
+            </div><!-- titulo-lista -->
+            
             <ul clas="lista-wrap" id="listaCadastros">
-                <li>
-                    <p>NOME</p>
-                    <p>E-MAIL</p>
-                    <p></p>
-                </li>
                
             </ul>
 
@@ -158,6 +158,78 @@
 
 
         </section><!-- cadastro-wrapper -->
+
+        <!-- Modal editar -->
+
+        <section class="cadastro-wrapper" id="cadastro-wrapper-editar">
+            <h1>Editar cadastro</h1>
+            <div class="radio">
+                <input class="checkbox" type="checkbox" name="ativo" id="iativo">
+                <label for="iativo">Ativo</label>
+            </div><!--radio  -->
+            
+
+            <form class="formulario" action="">
+                  <h2>1º Fatos e Dados</h2>  
+                <div class="cadastro-wrap">
+                    <div class="cadastro-nome">
+
+                        <label for="inome">Nome</label>
+                        <input type="text" name="nome" id="inome" required>
+                    </div> <!-- cadastro-nome -->
+                   
+                    <div class="flex-cadastro    flex">
+                        <div class="cadastro-idade">
+                            <label for="ididade">Idade</label>
+                            <input type="number" name="idade" id="ididade" required>
+                        </div>   <!-- cadastro-idade -->
+                     
+                        <div class="cadastro-email">
+                            <label for="iemail">E-mail</label>
+                            <input type="email" name="email" id="iemail" required>
+                        </div>  <!-- cadastro-email -->
+                      
+
+                    </div><!-- flex -->
+                    
+                    <div class="cadastro-endereco">
+                        <label for="iendereco">Endereço</label>
+                        <input type="text" name="endereco" id="iendereco" required>
+                    </div>  <!-- cadastro-endereco -->
+                  
+                    <div class="cadastro-outras-informacoes">
+                        <label for="outras-informacoes">Outras informações</label>
+                        <textarea name="ioutras-informacoes" id="ioutras-informacoes" cols="30" rows="10"></textarea>
+                    </div> <!-- cadastro-outras-informacoes -->
+                   
+
+
+                </div><!-- cadastro-wrap -->
+                <h2>2º Interesses</h2>
+                <div class="interesses">
+                    <textarea name="interesses" id="iinteresses-area"></textarea>
+
+                </div><!-- interesses -->
+                <h2>3º Sentimentos</h2>
+                <div class="sentimentos">
+                    <textarea name="sentimentos" id="isentimentos-area"></textarea>
+                </div><!-- sentimentos -->
+                <h2>4º Valores</h2>
+                <div class="valores">
+                    <textarea name="valores" id="ivalores-area" placeholder=""></textarea>
+                </div> <!-- valores -->
+                <div class="botao-salvar">
+                    <button class="btn-salvar" id="btn-salvar-editar">SALVAR</button>
+                </div> <!-- botao-salvar -->
+
+            </form><!-- formulario -->
+
+
+
+
+
+        </section><!-- cadastro-wrapper -->
+
 
 
 

@@ -2,7 +2,8 @@
 const usuarioLogado = document.querySelector("#usuario-logado");
 const btnSair = document.querySelector(".btn-sair");
 const btnSalvar = document.querySelector('.btn-salvar');
-const pesquisar= document.querySelector("#pesquisarId");
+const pesquisar = document.querySelector("#pesquisarId");
+const btnconfirmarEdit = document.querySelector("#btn-salvar-editar");
 // campos do formulário
 const radioAtivo = document.querySelector('#ativo');
 const formNome = document.querySelector('#nome');
@@ -13,16 +14,25 @@ const formOutrasInfo = document.querySelector('#outras-informacoes');
 const formInteresses = document.querySelector('#interesses-area');
 const formSentimentos = document.querySelector('#sentimentos-area');
 const formValores = document.querySelector('#valores-area');
+// campos editar 
+const radioAtivoEdit = document.querySelector('#iativo');
+const formNomeEdit = document.querySelector('#inome');
+const formIdadeEdit = document.querySelector('#ididade');
+const formEmailEdit = document.querySelector('#iemail');
+const formEnderecoEdit = document.querySelector('#iendereco');
+const formOutrasInfoEdit = document.querySelector('#ioutras-informacoes');
+const formInteressesEdit = document.querySelector('#iinteresses-area');
+const formSentimentosEdit = document.querySelector('#isentimentos-area');
+const formValoresEdit = document.querySelector('#ivalores-area');
 
-
-
-
-
+// Botão que aciona cadastrar
 btnSalvar.addEventListener("click", (event) => {
-    debugger;
+    
     cadastrarColaborador(event);
 
 })
+// botao que aciona editar
+
 
 // carrega ao iniciar a tela
 function onLoad() {
@@ -42,12 +52,31 @@ btnSair.addEventListener("click", function () {
     window.location.href = "../login/login.html";
 });
 
-// Função para abrir a tela de cadastro
+// função para abrir a tela de cadastro
 function abrirCadastro() {
     const telaLista = document.querySelector(".lista-wrapper");
     const telaCadastro = document.querySelector(".cadastro-wrapper");
     telaLista.style.display = "none";
     telaCadastro.style.display = "block";
+
+}
+// função para abrir modal  para editar colaborador
+function abrirModal(colaborador) {
+    const modal = document.querySelector("#cadastro-wrapper-editar");
+    const telaLista = document.querySelector(".lista-wrapper");
+    radioAtivoEdit.checked = colaborador.ativo;
+    formNomeEdit.value = colaborador.nome;
+    formIdadeEdit.value = colaborador.idade;
+    formEmailEdit.value= colaborador.email;
+    formEnderecoEdit.value = colaborador.endereco;
+    formOutrasInfoEdit.value = colaborador.outrasInfo;
+    formInteressesEdit.value = colaborador.interesses;
+    formSentimentosEdit.value= colaborador.sentimentos;
+    formValoresEdit.value = colaborador.valores;
+
+
+    telaLista.style.display = "none";
+    modal.style.display = "block";
 
 }
 
@@ -72,10 +101,10 @@ function cadastrarColaborador(event) {
     if (nome == "" || endereco == "" || idade == "" || email == "") {
         alert("Preencha todos os campos obrigatórios, Nome, Idade, Email e Endereço");
         formNome.focus();
-        formNome.style.border = "1px solid red";
-        formIdade.style.border = "1px solid red";
-        formEmail.style.border = "1px solid red";
-        formEndereco.style.border = "1px solid red";
+        formNome.style.border = "3px solid red";
+        formIdade.style.border = "3px solid red";
+        formEmail.style.border = "3px solid red";
+        formEndereco.style.border = "3px solid red";
         event.preventDefault();
         return;
     }
@@ -93,6 +122,31 @@ function cadastrarColaborador(event) {
 
 
 }
+// função para editar um colaborador
+    function editarColaborador(colaborador){
+        let nome = formNomeEdit.value;
+        let idade = formIdadeEdit.value;
+        let email = formEmailEdit.value;
+        let endereco = formEnderecoEdit.value;
+        let outrasInfo = formOutrasInfoEdit.value;
+        let interesses = formInteressesEdit.value;
+        let sentimentos = formSentimentosEdit.value;
+        let valores = formValoresEdit.value;
+        let ativo = radioAtivoEdit.checked ? true : false;
+        let usuarioLogad = usuarioLogado.innerHTML;
+    
+
+        const colaboradorNovo = { nome, idade, email, endereco, outrasInfo, interesses, sentimentos, valores, ativo,id:colaborador.id };
+        excluirColaborador(colaborador);
+        let usuarios = JSON.parse(localStorage.getItem(usuarioLogad)) || [];
+        usuarios[0].colaboradores.push(colaboradorNovo);
+        localStorage.setItem(usuarioLogad, JSON.stringify(usuarios));
+        adicionarNaLista(colaboradorNovo);
+
+    }
+
+
+
 
 // gera um id aleatório para o colaborador
 
@@ -106,12 +160,20 @@ function adicionarNaLista(colaborador) {
     const lista = document.querySelector("#listaCadastros");
     const item = document.createElement('li');
     item.innerHTML = `<p>${colaborador.nome}</p> <p>${colaborador.email}</p> <button id="btn-editar"><img src="/imagens/edit.png" alt="edit"></button>`;
-    const btnExcluir= document.createElement("button");
+    const btnExcluir = document.createElement("button");
     btnExcluir.innerHTML = `X`;
     btnExcluir.setAttribute("id", "btn-excluir");
-    btnExcluir.addEventListener("click", ()=>{
+    btnExcluir.addEventListener("click", () => {
         excluirColaborador(colaborador);
         item.remove();
+    });
+    const btnEditar = item.querySelector("#btn-editar");
+    btnEditar.addEventListener("click", () => {
+        abrirModal(colaborador);
+        btnconfirmarEdit.addEventListener("click",()=>{
+            editarColaborador(colaborador);
+        
+        })
     });
 
     item.appendChild(btnExcluir);
@@ -121,10 +183,10 @@ function adicionarNaLista(colaborador) {
 
 // carregar a lista de colaboradores
 function carregarLista() {
-        let usuario = usuarioLogado.innerHTML;
-    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
+    let usuario = usuarioLogado.innerHTML;
+    let cadastros = JSON.parse(localStorage.getItem(usuario)) || [];
 
-    cadastros[0].colaboradores.forEach(item=> adicionarNaLista(item));
+    cadastros[0].colaboradores.forEach(item => adicionarNaLista(item));
 
 
 
@@ -135,28 +197,28 @@ function carregarLista() {
 // excluir colaborador
 function excluirColaborador(colaborador) {
     let usuario = usuarioLogado.innerHTML;
-    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
-    cadastros[0].colaboradores = cadastros[0].colaboradores.filter(item=> item.id !== colaborador.id);
+    let cadastros = JSON.parse(localStorage.getItem(usuario)) || [];
+    cadastros[0].colaboradores = cadastros[0].colaboradores.filter(item => item.id !== colaborador.id);
     localStorage.setItem(usuario, JSON.stringify(cadastros));
-    
+
 
 }
 
 
 // pesquisar colaborador
-pesquisar.addEventListener("keyup", ()=>{
+pesquisar.addEventListener("keyup", () => {
 
-    
+
     let usuario = usuarioLogado.innerHTML;
-    let cadastros= JSON.parse(localStorage.getItem(usuario)) || [];
-    let valor = pesquisar.value.toLowerCase(); 
+    let cadastros = JSON.parse(localStorage.getItem(usuario)) || [];
+    let valor = pesquisar.value.toLowerCase();
     const lista = document.querySelector("#listaCadastros")
     lista.innerHTML = "";
-    cadastros[0].colaboradores.forEach(item=>{
-        if(item.nome.toLowerCase().includes(valor) || item.email.toLowerCase().includes(valor)){
+    cadastros[0].colaboradores.forEach(item => {
+        if (item.nome.toLowerCase().includes(valor) || item.email.toLowerCase().includes(valor)) {
             adicionarNaLista(item);
         }
     });
 
-    
+
 });

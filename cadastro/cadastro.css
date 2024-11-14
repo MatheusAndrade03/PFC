@@ -228,11 +228,32 @@ section.pesquisar-wrapper>.botao-sair>.btn-sair:hover{
     font-size: 18px;
     font-weight: 700;
     line-height: 21.13px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
+}
+.lista-wrapper>.titulo-lista{
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+   
+}.lista-wrapper>.titulo-lista>.borda{
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #a87a6f;
+
+}
+.lista-wrapper>.titulo-lista>p{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16.41px;
 }
 .lista-wrapper>ul{
     list-style: none;
-    padding: 20px;
+    padding: 0 20px;
 }
 .lista-wrapper>ul>li{
     position: relative;
@@ -582,4 +603,15 @@ section.cadastro-wrapper>form>h2{
     line-height: 18.75px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+}
+
+/* Cadastro-wrapper-editar */
+#cadastro-wrapper-editar{
+    display: none;
+    position: relative;
+    margin: 25px 2%;
+    background-color: #fff;
+    height:80%;
+    box-shadow: 1px 1px 5px black;
+    padding: 20px;
 }
