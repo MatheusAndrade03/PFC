@@ -152,8 +152,13 @@ section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
     padding-left: 45px;
 
 }
+/* Abrir menu */
+#abrir-menu{
+    display: none;
+}
 
 /* usuario  */
+
 section.pesquisar-wrapper>.flex-usuario{
     display: flex;
     align-items: center;

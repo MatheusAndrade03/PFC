@@ -52,7 +52,7 @@
         width: 100%;
     }
     nav{
-        display: block;
+        display: none;
         z-index: 3;
         position: absolute;
         width: 45%;
@@ -65,15 +65,29 @@
 
         section.pesquisar-wrapper{
             padding: 10px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        section.pesquisar-wrapper>.pesquisar-wrap{
+            width: 100%;
         }
     section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
-        width: 400px;
+        width: 100%;
         
+    }
+    /* icon menu */
+    #abrir-menu{
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 13px;
     }
     
     /* usuario  */
     section.pesquisar-wrapper>.flex-usuario{
-        display: none;
+        display: flex;
     
     }   
 
