@@ -7,7 +7,7 @@
     <title>Home</title>
     <!-- estilos -->
     <link rel="stylesheet" href="home.css"> 
-     <link rel="stylesheet" href="home-responsivo.css">
+     <link rel="stylesheet" href="/estilos/responsivo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=logout" />
@@ -17,7 +17,16 @@
 </head>
 
 <body onload="onLoad()">
-    <nav>
+
+    <div onclick="fecharMenu()" class="overflow">
+        
+    </div>
+
+
+    <nav class="nav">
+        <div class="menu-close">
+            <img onclick="fecharMenu()" id="fechar-menu" src="/imagens/excluir.png" alt="close">
+        </div>
         
         <div class="logo flex">
 
@@ -50,9 +59,10 @@
                     <input type="text" placeholder="Pesquisar..." class="pesquisar" id="pesquisarId">
                 </div><!-- pesquisar-wrap -->
                 <div class="abrirMenu-wraper">
-                   <img id="abrir-menu" src="/imagens/menu-icon.png" alt="menu">
+                   <img id="abrir-menu" src="/imagens/menu-icon.png" alt="menu" onclick="abrirMenu()">
 
-                </div>
+                </div><!--abrirMenu-wraper  -->
+                
                 
                 <div class="flex-usuario">
                     
@@ -89,7 +99,7 @@
                 </div><!-- dashboard-wrap -->
                 <div class="dashboard-wrap div-3">
                     <h1 id="dashboard-div3">10</h1>
-                    <p>Cadastros desativos</p>
+                    <p>Cadastros inativos</p>
                 </div><!-- dashboard-wrap -->
 
 

@@ -30,6 +30,9 @@ main{
     width: 77%;
     
 }
+.overflow{
+    display: none;
+}
 
 /* Parte lateral do site com a navegação */
 
@@ -44,6 +47,9 @@ nav{
     padding: 1.5%;
     gap: 5%;
     z-index: 2;
+}
+nav #fechar-menu{
+    display: none;
 }
 nav .logo{
     display: flex;
@@ -152,6 +158,10 @@ section.pesquisar-wrapper>.pesquisar-wrap>.pesquisar{
     padding-left: 45px;
 
 }
+#abrir-menu{
+    display: none;
+}
+
 
 /* usuario  */
 section.pesquisar-wrapper>.flex-usuario{

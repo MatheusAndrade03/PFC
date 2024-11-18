@@ -31,7 +31,26 @@ btnSalvar.addEventListener("click", (event) => {
     cadastrarColaborador(event);
 
 })
-// botao que aciona editar
+
+
+// abrir menu
+function abrirMenu(){
+    let nav = document.querySelector(".nav");
+    let overflow= document.querySelector(  ".overflow");
+    nav.style.display = "block";
+    nav.style.left = "0";
+    overflow.style.display = "block";
+
+}
+
+// fehar menu
+function fecharMenu(){
+    let nav = document.querySelector(".nav");
+    let overflow= document.querySelector(  ".overflow");
+    nav.style.left = "-400px";
+    overflow.style.display = "none";
+}
+
 
 
 // carrega ao iniciar a tela

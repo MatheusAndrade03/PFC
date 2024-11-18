@@ -44,20 +44,36 @@
 /* celular */
 @media screen and (max-width:830px) {
     body{
-        flex-direction: row-reverse;
+        position: relative;
+        flex-direction: row;
     }
    
     main{
-        background-color: red;
+
         width: 100%;
+        padding-bottom: 10px;
     }
     nav{
-        display: none;
+        position: absolute;
+        top: 0;
+        left: -400px;
+    
         z-index: 3;
         position: absolute;
         width: 45%;
+        transition: all 0.5s ease;
+
         
     }	
+    .overflow{
+        position: absolute;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.988);
+        opacity: 0.7;
+    }
 
 
 
@@ -83,13 +99,33 @@
         position: absolute;
         top: 15px;
         left: 13px;
+        cursor: pointer;
     }
+    /* fechar menu */
+    nav #fechar-menu{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 13px;
+        cursor: pointer;
+        width: 25px;
+        
+    
+    } 
+    .dashboard-wrapper .dashboard-wrap>p{
+        font-size: 15px;
+    }
+
     
     /* usuario  */
     section.pesquisar-wrapper>.flex-usuario{
         display: flex;
     
     }   
+
+    .botao-imprimir>.btn-imprimir{
+        width: 120px;
+    }
 
 
 
