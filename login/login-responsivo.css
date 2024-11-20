@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 768px)and (max-width:992px){
     body{
-    background-image: linear-gradient(   to top,#5f3a36 , #6e424d);
+    background-image: linear-gradient(   to top,#d9d99b , #d9d99b);
     }
     section#login{
         display: flex;
@@ -45,7 +45,7 @@
 }
 @media screen and (min-width: 990px){
      body{
-    background-image: linear-gradient(   to top,#6e424d,#5f3a36 ); 
+    background-image: linear-gradient(   to top,#d9d99b,#d9d99b ); 
     }
 
     section#login{
@@ -84,7 +84,7 @@
         padding-top: 20px;
     }
     #formulario>form>div .inputs{
-        color: #5f3a36;
+        color: #3a2613;
         width: 90%;
         height: 40px;
         outline: none;
@@ -98,7 +98,7 @@
         font-size: 1em;
         width: 50%;
         height: 40px;
-        background-color: #a87a6f;
+        background-color: #3a2613;
         border: 1px solid black;
         border-radius: 5px;
         color: white;
@@ -106,7 +106,7 @@
     
     }
     #botaoEntrar:hover{
-        background-color: #5f3a36;
+        background-color: #5d3918;
     
     }
 

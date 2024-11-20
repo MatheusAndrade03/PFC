@@ -1,22 +1,24 @@
 @charset "UTF-8";
 
 
-*{
+* {
 
-padding: 0px;
-margin: 0px;
-box-sizing: border-box;
-font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
-body,html{
 
-background-color: #5f3a36;
- height: 100vh;
- width: 100vw;
+body,
+html {
+
+    background-color: #d9d99b;
+    height: 100vh;
+    width: 100vw;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,41 +29,44 @@ main{
 
 }
 
-section#login{
+section#login {
 
-background-color: white;
-width: 300px;
-height: 650px;
-border-radius: 20px;
+    background-color: #ffffff;
+    width: 300px;
+    height: 650px;
+    border-radius: 20px;
 
 
 
 }
 
-div#imagem{
+div#imagem {
+    
     border-radius: 20px 20px 0px 0px;
-background-size: cover;
-background-repeat: no-repeat;
-background-position: top center;
-height: 200px;
-background-image: url(/login/imagens/pexels-pixabay-276514.jpg);
-border: 1px solid black;
-box-shadow: 1px 1px 1px black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 200px;
+    background-color: #3a2613;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
 
 }
+
 
 /* Section Formulario  */
 
-#formulario{
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+#formulario {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-    
+
 }
-#formulario  div.logo{
+
+#formulario div.logo {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -70,124 +75,133 @@ box-shadow: 1px 1px 1px black;
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    background-color: #a87a6f;
+    background-color: #3a2613;
     margin-bottom: 20px;
     padding: 10px;
-      
+
 
 }
+
 /* Logo OC */
-#formulario  div.logo>h1{
+#formulario div.logo>h1 {
     color: white;
     font-size: 3em;
     font-weight: bold;
 
 }
-#formulario  div.logo>p{
+
+#formulario div.logo>p {
     color: white;
     font-size: 0.8em;
 
 }
 
 /* Formulario form */
-#formulario>form{
+#formulario>form {
     width: 100%;
 }
-#formulario> div{
+
+#formulario>div {
     padding-top: 10px;
 }
 
-#formulario>form>div{
+#formulario>form>div {
     padding-top: 10px;
 }
+
 /* login */
 
-#formulario>form>div.login{
+#formulario>form>div.login {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-   
+
 }
-#formulario>form>div.login>span{
+
+#formulario>form>div.login>span {
     position: absolute;
     left: 35px;
 }
 
-#formulario>form>div.senha{
+#formulario>form>div.senha {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-   
+
 }
-#formulario>form>div.senha>span{
+
+#formulario>form>div.senha>span {
     position: absolute;
     left: 35px;
 }
 
 
-#formulario>form>div .inputs{
-    color: #5f3a36;
+#formulario>form>div .inputs {
+    color: #3a2613;
     width: 80%;
     height: 40px;
     outline: none;
-    border: 3px solid #a87a6f;
+    border: 3px solid #3a2613;
     padding-left: 45px;
     font-size: 16px;
     border-radius: 8px;
-    
+
 
 }
 
-div.campo>label{
+div.campo>label {
     display: none;
 }
 
 
-#botoes{
-    display: flex ;
-    flex-direction: column
-    ;
+#botoes {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
     width: 100%;
     height: 100%;
 }
-#botaoEntrar{
-    
+
+#botaoEntrar {
+
     padding-top: 10px;
     font-size: 1em;
     width: 100%;
     height: 40px;
-    background-color: #a87a6f;
+    background-color: #3a2613;
     border: 1px solid black;
     border-radius: 30px;
     color: white;
     cursor: pointer;
 
 }
-#botaoEntrar:hover{
-    background-color: #5f3a36;
+
+#botaoEntrar:hover {
+    background-color: #3a2613;
 
 }
-#botaoEsqueciSenha{
-padding-top: 10px;
-width: 100%;
-height: 40px;
-border: 1px solid black;
-border-radius: 30px;
 
-text-decoration: none;
+#botaoEsqueciSenha {
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 30px;
 
-color: #5f3a36;
+    text-decoration: none;
+
+    color: #5f3a36;
 
 
 }
-#botaoEsqueciSenha:hover{
+
+#botaoEsqueciSenha:hover {
     background-color: #5f3a36;
     color: white;
 }
