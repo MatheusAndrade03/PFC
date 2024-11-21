@@ -279,7 +279,7 @@ section.pesquisar-wrapper>.flex-usuario>.botao-sair>.btn-sair:hover{
 .lista-wrapper{
     margin: 0 2%;
     background-color: #fff;
-    height:55%;
+    height:52%;
     box-shadow: 1px 1px 5px black;
     padding:20px;
     overflow-y: auto;
