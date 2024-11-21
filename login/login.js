@@ -37,6 +37,11 @@ const matheus = [{
 }
 ];
 
+function onLoad() {
+        localStorage.setItem('luciano', JSON.stringify(luciano));
+        localStorage.setItem('matheus', JSON.stringify(matheus));
+}
+
 
 // botão entrar ação
 btnEntrar.addEventListener("click", (event) => {
